@@ -1,0 +1,92 @@
+﻿<skin name="SimpleBroadcastVideoSkin2" version="2" width="1920" height="1080"
+			comment="A simple broadcast video skin" author="WindupBird" image="background.png" preview="preview.png">
+  <copyright>Free for all to use</copyright>
+  <font name="HarmonyOS Sans"/>
+
+	<visual visibility="true">
+		<pos x="0" y="0"/>
+		<size width="1920" height="1080"/>
+		<off x="0" y="0"/>
+	</visual>
+
+	<!-- Define the color here -->
+	<define color = "text" value = "white"/>
+	<define color = "title" value = "white"/>
+	<define color = "artist" value = "lightgray"/>
+
+
+	<!-- Next Track Info -->
+	<group name="nexttrack" x="+1920-200-100" y="1080-340-150"
+			visibility="not param_equal `deck master get_filename` `get_loaded_song 'filename' deck='master'`">
+
+			<!-- Next Song -->
+			<textzone>
+				<pos x="+0" y="+0"/>
+				<size width="200" height="50"/>
+				<text fontsize="28" align="left" weight="bold" color="text" text="Play Next"/>
+			</textzone>
+
+			<!-- Cover -->
+			<cover source="default">
+				<pos x="+0" y="+50"/>
+				<size width="200" height="200"/>
+			</cover>
+
+			<!-- Artist -->
+			<textzone group="horizontal" scroll="yes" align="right">
+				<pos x="-200" y="+50+200"/>
+				<size width="400" height="50"/>
+				<text fontsize="28" color="artist" weight="regular" action="get loaded_song artist"/>
+			</textzone>
+
+			<!-- Titile -->
+			<textzone group="horizontal" scroll="yes" align="right" >
+				<pos x="-200" y="+50+200+40"/>
+				<size width="400" height="50"/>
+				<text fontsize="28" color="title" weight="bold" action="get loaded_song title"/>
+			</textzone>
+	</group>
+
+
+	<!-- Playing Now -->
+	<group name="masterdeck" x="+100" y="1080-550-150">
+		<deck deck="master">
+
+			<!-- Playing Now -->
+			<textzone>
+				<pos x="+0" y="-5"/>
+				<size width="400" height="50"/>
+				<text fontsize="36" align="left" weight="bold" color="text" text="Playing Now"/>
+			</textzone>
+
+			<!-- Cover -->
+			<cover x="+0" y="+50" width="400" height="400"
+				visibility="true"/>
+
+			<!-- Track artist -->
+			<textzone group="horizontal" align="left" scroll="yes">
+				<pos x="+0" y="+50+400"/>
+				<size width="500" height="50"/>
+				<text fontsize="36" color="artist" weight="regular" action="get_artist_before_feat"/>
+				<text fontsize="36" color="artist" weight="light" action="get_featuring_after_artist"/>
+			</textzone>
+
+			<!-- Track title -->
+			<textzone group="horizontal" align="left" scroll="yes">
+				<pos x="+0" y="+50+400+50"/>
+				<size width="500" height="50"/>
+				<text fontsize="36" color="title" weight="bold" action="get_title"/>
+			</textzone>
+		</deck>
+
+	</group>
+
+		<equalizer type="bar" nb="96" color="white" deck="master" width="0.6" slow="true" bass="middle" mirror="false" >
+			<pos x="+80" y="1080-400"/>
+			<size width="1920-150" height="400" />
+		</equalizer>
+	  	<equalizer type="bar" nb="96" color="black" deck="master" width="0.6" slow="true" bass="middle" mirror="false" >
+			<pos x="+80" y="1080-150"/>
+			<size width="1920-160" height="150" />
+		</equalizer>
+</skin>

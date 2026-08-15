@@ -1,0 +1,59 @@
+﻿<skin name="SimpleBroadcastVideoSkin3" version="3" width="1920" height="1080"
+			comment="A simple broadcast video skin" author="WindupBird" image="background.png" preview="preview.png">
+  <copyright>Free for all to use</copyright>
+  <font name="HarmonyOS Sans"/>
+
+	<visual visibility="true">
+		<pos x="0" y="0"/>
+		<size width="1920" height="1080"/>
+		<off x="0" y="0"/>
+	</visual>
+
+	<!-- Define the color here -->
+	<define color = "text" value = "white"/>
+	<define color = "title" value = "white"/>
+	<define color = "artist" value = "lightgray"/>
+
+	<!-- Deck master -->
+	<deck deck="master">
+		<group name="deckmaster" x="+100" y="1080-340-150" visibility="1">
+			<!-- Playing Now 标题 -->
+			<textzone>
+				<pos x="+0" y="-5"/>
+				<size width="200" height="50"/>
+				<text fontsize="28" align="left" weight="bold" color="text" text="Playing Now"/>
+			</textzone>
+
+			<!-- Cover (200x200) -->
+			<cover deck="master" visibility="1">
+				<pos x="+0" y="+50"/>
+				<size width="200" height="200"/>
+			</cover>
+
+			<!-- Artist -->
+			<textzone group="horizontal" align="left" scroll="yes">
+				<pos x="+0" y="+50+200"/>
+				<size width="300" height="50"/>
+				<text fontsize="28" color="artist" weight="regular" action="get_artist_before_feat"/>
+				<text fontsize="28" color="artist" weight="light" action="get_featuring_after_artist"/>
+			</textzone>
+
+			<!-- Title -->
+			<textzone group="horizontal" align="left" scroll="yes">
+				<pos x="+0" y="+50+200+40"/>
+				<size width="300" height="50"/>
+				<text fontsize="28" color="title" weight="bold" action="get_title"/>
+			</textzone>
+		</group>
+	</deck>
+
+	<!-- Equalizer -->
+	<equalizer type="bar" nb="96" color="white" deck="master" width="0.6" slow="true" bass="middle" mirror="false">
+		<pos x="+80" y="1080-400"/>
+		<size width="1920-150" height="400" />
+	</equalizer>
+	<equalizer type="bar" nb="96" color="black" deck="master" width="0.6" slow="true" bass="middle" mirror="false">
+		<pos x="+80" y="1080-150"/>
+		<size width="1920-160" height="150" />
+	</equalizer>
+</skin>

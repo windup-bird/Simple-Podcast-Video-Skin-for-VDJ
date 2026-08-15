@@ -1,0 +1,93 @@
+﻿<skin name="SimpleBroadcastVideoSkin4" version="4" width="1920" height="1080"
+			comment="A simple broadcast video skin" author="WindupBird" image="background.png" preview="preview.png">
+  <copyright>Free for all to use</copyright>
+  <font name="HarmonyOS Sans"/>
+
+	<visual visibility="true">
+		<pos x="0" y="0"/>
+		<size width="1920" height="1080"/>
+		<off x="0" y="0"/>
+	</visual>
+
+	<!-- Define the color here -->
+	<define color = "text" value = "white"/>
+	<define color = "title" value = "white"/>
+	<define color = "artist" value = "lightgray"/>
+
+	<!-- Deck 1 -->
+	<deck deck="1">
+		<group name="deckmaster" x="+100" y="1080-340-100" visibility="play">
+			<!-- Playing Now 标题 -->
+			<textzone>
+				<pos x="+0" y="-5"/>
+				<size width="200" height="50"/>
+				<text fontsize="28" align="left" weight="bold" color="text" text=""/>
+			</textzone>
+
+			<!-- Cover (200x200) -->
+			<cover visibility="1">
+				<pos x="+0" y="+50"/>
+				<size width="200" height="200"/>
+			</cover>
+
+			<!-- Artist -->
+			<textzone group="horizontal" align="left" scroll="yes">
+				<pos x="+0" y="+50+200"/>
+				<size width="300" height="50"/>
+				<text fontsize="28" color="artist" weight="regular" action="get_artist_before_feat"/>
+				<text fontsize="28" color="artist" weight="light" action="get_featuring_after_artist"/>
+			</textzone>
+
+			<!-- Title -->
+			<textzone group="horizontal" align="left" scroll="yes">
+				<pos x="+0" y="+50+200+40"/>
+				<size width="300" height="50"/>
+				<text fontsize="28" color="title" weight="bold" action="get_title"/>
+			</textzone>
+		</group>
+	</deck>
+
+	<!-- Deck 2 -->
+	<deck deck="2">
+		<group name="deckmaster" x="+1920-200-100" y="1080-340-100"
+		visibility="play">
+			<!-- Play Next 标题 -->
+			<textzone>
+				<pos x="+0" y="-5"/>
+				<size width="200" height="50"/>
+				<text fontsize="28" align="left" weight="bold" color="text" text=""/>
+			</textzone>
+
+			<!-- Cover (200x200) -->
+			<cover visibility="1">
+				<pos x="+0" y="+50"/>
+				<size width="200" height="200"/>
+			</cover>
+
+			<!-- Artist -->
+			<textzone group="horizontal" align="right" scroll="yes">
+				<pos x="-200" y="+50+200"/>
+				<size width="400" height="50"/>
+				<text fontsize="28" color="artist" weight="regular" action="get_artist_before_feat"/>
+				<text fontsize="28" color="artist" weight="light" action="get_featuring_after_artist"/>
+			</textzone>
+
+			<!-- Title -->
+			<textzone group="horizontal" align="right" scroll="yes">
+				<pos x="-200" y="+50+200+40"/>
+				<size width="400" height="50"/>
+				<text fontsize="28" color="title" weight="bold" action="get_title"/>
+			</textzone>
+		</group>
+	</deck>
+
+	<!-- Equalizer -->
+	<equalizer type="bar" nb="96" color="white" deck="master" width="0.6" slow="true" bass="middle" mirror="false">
+		<pos x="+0" y="1080-300"/>
+		<size width="1920" height="300" />
+	</equalizer>
+	<equalizer type="bar" nb="96" color="black" deck="master" width="0.6" slow="true" bass="middle" mirror="false">
+		<pos x="+0" y="1080-120"/>
+		<size width="1920" height="120" />
+	</equalizer>
+</skin>
