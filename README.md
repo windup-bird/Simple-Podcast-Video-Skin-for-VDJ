@@ -1,17 +1,11 @@
 # Simple Podcast Video Skin for Virtual DJ
 
-A clean video output skin for podcasters, radio DJs, and live streamers using Virtual DJ.
-
----
-
 ## Overview
 
 **概述**  
 A minimalist video output skin for Virtual DJ. Displays track information and audio visualization. Ideal for podcasts, radio shows, and live streaming.
 
 为 Virtual DJ 设计的极简视频输出皮肤，适合播客、电台和直播。显示曲目信息和音频可视化。
-
----
 
 ## Features
 
@@ -23,8 +17,6 @@ A minimalist video output skin for Virtual DJ. Displays track information and au
 - Audio visualization or dual-track waveform display  
   可视化音频或双轨波形显示  
 
----
-
 ## Installation
 
 **安装**  
@@ -34,8 +26,6 @@ A minimalist video output skin for Virtual DJ. Displays track information and au
    将 `SimplePodcast` 文件夹复制到 `~/AppData/Local/VirtualDJ/videoskins/` (Windows)。  
 3. Switch to this skin in the **Video Overlay** settings.  
    在 **视频叠加** 设置中切换到此皮肤。
-
----
 
 ## License
 
